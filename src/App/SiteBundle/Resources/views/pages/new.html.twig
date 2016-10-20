@@ -1,0 +1,72 @@
+{% extends 'SiteBundle:layouts:master.http.twig' %}
+
+{% block content %}
+    <h1>Posts creation</h1>
+
+
+    {{ form_start(form) }}
+    {{ form_errors(form) }}
+
+    <div>
+        {{ form_label(form.name, 'Name') }}
+        {{ form_errors(form.name) }}
+        {{ form_widget(form.name) }}
+    </div>
+
+    <div>
+        {{ form_label(form.email, 'Email') }}
+        {{ form_errors(form.email) }}
+        {{ form_widget(form.email) }}
+    </div>
+
+
+    <div>
+        {{ form_label(form.subject) }}
+        {{ form_errors(form.subject) }}
+        {{ form_widget(form.subject) }}
+    </div>
+
+    <input type="submit" value="Create" />
+
+    {{ form_end(form) }}
+
+
+
+
+
+
+    {#{{ form_start(form) }}#}
+    {#{{ form_row(form.name) }}#}
+    {#{{ form_row(form.email) }}#}
+    {#{{ form_row(form.subject) }}#}
+    {#<input type="submit" value="Create" />#}
+    {#{{ form_rest(form) }}#}
+
+    {#<ul>#}
+        {#<li>#}
+            {#<a href="{{ path('posts_index') }}">Back to the list</a>#}
+        {#</li>#}
+    {#</ul>#}
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+    {#<h1>Posts creation</h1>#}
+
+
+
+    {#<ul>#}
+        {#<li>#}
+            {#<a href="{{ path('posts_index') }}">Back to the list</a>#}
+        {#</li>#}
+    {#</ul>#}
+

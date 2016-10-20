@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Новый сайт</title>
+
+    {% include '@Site/layouts/partials/head.htp.twig' %}
+</head>
+<body>
+
+{% include '@Site/layouts/partials/header.http.twig' %}
+
+{% block header %}{% endblock %}
+
+{% block content %} {% endblock %}
+
+{% include '@Site/layouts/partials/footer.http.twig' %}
+
+{% include '@Site/layouts/partials/scripts.http.twig' %}
+</body>
+</html>

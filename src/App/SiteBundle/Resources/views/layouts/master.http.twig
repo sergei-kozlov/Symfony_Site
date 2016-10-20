@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Новый сайт</title>
+    {% include '@Site/layouts/partials/head.htp.twig' %}
+</head>
+<body>
+
+{% include '@Site/layouts/partials/header.http.twig' %}
+<div class="about">
+    <div class="container">
+        <section class="title-section">
+            <h1 class="text-center">Nova</h1>
+        </section>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 about_right">
+
+            {% block content %}{% endblock %}
+        </div>
+        <div class="col-md-4">
+
+            {% block sidebar %} {% endblock %}
+        </div>
+    </div>
+</div>
+
+
+{% block dashboard %}{% endblock %}
+
+
+{% include '@Site/layouts/partials/footer.http.twig' %}
+
+{% include '@Site/layouts/partials/scripts.http.twig' %}
+</body>
+</html>

@@ -28,7 +28,7 @@ class PostsController extends Controller
 
         $posts = $em->getRepository('SiteBundle:Posts')->findAll();
 
-        return $this->render('posts/index.html.twig', array(
+        return $this->render('@Site/pages/index.html.twig', array(
             'posts' => $posts,
         ));
     }
@@ -53,8 +53,8 @@ class PostsController extends Controller
             return $this->redirectToRoute('posts_show', array('id' => $post->getId()));
         }
 
-        return $this->render('posts/new.html.twig', array(
-            'post' => $post,
+        return $this->render('@Site/pages/new.html.twig', array(
+            'posts' => $post,
             'form' => $form->createView(),
         ));
     }

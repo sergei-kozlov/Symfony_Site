@@ -3,15 +3,23 @@
 namespace App\SiteBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints\DateTime;
 
 /**
  * Posts
  *
  * @ORM\Table(name="posts")
  * @ORM\Entity
+ * @ORM\HasLifecycleCallbacks
  */
 class Posts
 {
+    public function __construct()
+    {
+        $this->setCreated(new \DateTime());
+        $this->setUpdated(new \DateTime());
+    }
+
     /**
      * @var integer
      *

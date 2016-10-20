@@ -1,3 +1,39 @@
+site_default:
+    path:     /
+    defaults: { _controller: SiteBundle:Page:home }
+    requirements:
+    methods: GET
+
+site_homeepage:
+    path:     /home
+    defaults: { _controller: SiteBundle:Page:home }
+    requirements:
+    methods: GET
+
+site_about:
+    path:     /about
+    defaults: { _controller: SiteBundle:Page:about }
+    requirements:
+    methods: GET
+
+site_contact:
+    path:     /contact
+    defaults: { _controller: SiteBundle:Page:contact }
+    requirements:
+    methods: GET
+
+site_services:
+    path:     /services
+    defaults: { _controller: SiteBundle:Page:services }
+    requirements:
+    methods: GET
+
+
+
+
+
+
+
 site_homepage:
     path:     /
     defaults: { _controller: SiteBundle:Default:index }
@@ -9,10 +45,10 @@ site_index:
     methods: GET
 
 site_new:
-    path:     /new
+    path:     /posts/new
     defaults: { _controller: SiteBundle:Posts:new }
     requirements:
-    methods: GET
+    methods: GET|POST
 
 site_show:
     path:     /show

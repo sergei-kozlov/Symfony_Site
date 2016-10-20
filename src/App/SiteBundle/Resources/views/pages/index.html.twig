@@ -1,0 +1,30 @@
+{% extends 'SiteBundle:layouts:master.http.twig' %}
+
+{% block content %}
+
+
+    {% for post in posts %}
+
+        <div class="panel panel-default">
+            <div class="panel-heading">{{ post.name }}</div>
+            <div class="panel-body"><b>{{ post.subject }}</b></div>
+            <div class="panel-body" align="right">{{ post.created|date('l, F j, Y') }}</div>
+
+        </div>
+
+
+    {% endfor %}
+
+    <ul>
+        <li>
+            <a href="{{ path('posts_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+
+
+
+
+
+{% endblock %}
+
+

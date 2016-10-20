@@ -18,8 +18,8 @@ class PostsType extends AbstractType
             ->add('name')
             ->add('email')
             ->add('subject')
-            ->add('created', 'datetime')
-            ->add('updated', 'datetime')
+//            ->add('created', 'datetime')
+//            ->add('updated', 'datetime')
         ;
     }
     

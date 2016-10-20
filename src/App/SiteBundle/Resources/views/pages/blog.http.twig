@@ -1,0 +1,136 @@
+{% extends 'SiteBundle:layouts:master.http.twig' %}
+
+{% block contetnt %}
+
+
+{% for blog in posts %}
+
+        <div class="panel panel-default">
+            <div class="panel-heading">{{ blog.name }}</div>
+            <div class="panel-body"><b>{{ blog.subject }}</b></div>
+            <div class="panel-body" align="right">{{ blog.created|date('l, F j, Y') }}</div>
+
+        </div>
+
+
+
+{% endfor %}
+
+
+
+    <a href="{{path ('simple_site_site_addNotes')}}">Добавить отзыв</a>
+
+
+
+
+
+
+        {#{{--{{Form::open([--}}#}
+        {#{{--'method' => 'delete',--}}#}
+        {#{{--'route' => ['blog.destroy', $post->id ]])}}--}}#}
+        {#{{--<div class="panel-body">--}}#}
+        {#{{--<div class="pull-right">--}}#}
+        {#{{--<a href="{{route('blog.destroy', $post->id) }}">--}}#}
+        {#{{--<button class="btn btn-danger">--}}#}
+        {#{{--<i class="glyphicon glyphicon-trash"></i>--}}#}
+        {#{{--</button>--}}#}
+        {#{{--</a>--}}#}
+        {#{{--</div>--}}#}
+        {#{{--</div>--}}#}
+        {#{{--{{Form::close()}}--}}#}
+
+
+    {#@endforeach#}
+    {#<div class="text-center">#}
+        {#{!! $posts -> render() !!}#}
+
+    {#</div>#}
+
+
+    {#<div class="text-right">Всего сообщений {{$count}}</div>#}
+
+
+
+    {#{!! Form::open(['route' => 'store'])!!}#}
+
+{#{{ form_start(form, { 'action': path('simple_site_site_blog'), 'method': 'POST', 'attr': {'class': 'simplesite'} }) }}#}
+
+
+    {#<div class="form-group">#}
+
+        {#{!! Form::label('name', 'Name') !!}#}
+
+        {#{!! Form::text('name', null,#}
+        {#['placeholder' => 'Введите ваше имя',#}
+        {#'class' =>"form-control",#}
+        {#'required']) !!}#}
+    {#</div>#}
+
+    {#<div class="form-group">#}
+        {#{!! Form::label('email', 'Email') !!}#}
+
+        {#{!! Form::email('email', null,#}
+        {#['placeholder' => 'Введите ваш email',#}
+        {#'class' =>"form-control",#}
+        {#'required']) !!}#}
+
+
+    {#</div>#}
+
+    {#<div class="form-group">#}
+        {#{!! Form::label('subject', 'Subject') !!}#}
+        {#{!! Form::textarea('subject', null,#}
+        {#['placeholder' => 'Введите ваше сообщение',#}
+        {#'class'=>"form-control",#}
+        {#'rows'=> '5',#}
+        {#'cols' => '50',#}
+        {#'required']) !!}#}
+    {#</div>#}
+
+    {#<div class="form-group" id="click">#}
+        {#{!! Form::submit('Добавить' , ['class' => 'btn btn-primary']) !!}#}
+    {#</div>#}
+
+    {#{!! Form::close()!!}#}
+
+{#@stop#}
+
+
+
+
+
+{#{% block title %}Отзывы {% endblock %}#}
+
+
+    {#<header>#}
+        {#<h1>Contact symblog</h1>#}
+    {#</header>#}
+
+    {#<p>Want to contact symblog?</p>#}
+
+
+
+
+
+
+    {#{{ form_start(form, { 'action': path('simple_site_site_new'), 'method': 'POST', 'attr': {'class': 'simplesite'} }) }}#}
+    {#{{ form_errors(form) }}#}
+
+    {#{{ form_row(form.name) }}#}
+    {#{{ form_row(form.email) }}#}
+    {#{{ form_row(form.subject) }}#}
+
+
+
+    {#{{ form_rest(form) }}#}
+
+    {#<input type="submit" value="Submit" />#}
+
+        {#</div>#}
+
+
+
+
+{% endblock %}
+
+
