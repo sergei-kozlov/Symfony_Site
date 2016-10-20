@@ -1,0 +1,9 @@
+site_posts:
+    resource: "@SiteBundle/Controller/PostsController.php"
+    type:     annotation
+
+site:
+    resource: "@SiteBundle/Resources/config/routing.yml"
+    prefix:   /
+
+
