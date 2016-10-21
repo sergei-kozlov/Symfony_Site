@@ -76,33 +76,6 @@ class PostsController extends Controller
     }
 
     /**
-     * Displays a form to edit an existing Posts entity.
-     *
-     * @Route("/{id}/edit", name="posts_edit")
-     * @Method({"GET", "POST"})
-     */
-//    public function editAction(Request $request, Posts $post)
-//    {
-//        $deleteForm = $this->createDeleteForm($post);
-//        $editForm = $this->createForm('App\SiteBundle\Form\PostsType', $post);
-//        $editForm->handleRequest($request);
-//
-//        if ($editForm->isSubmitted() && $editForm->isValid()) {
-//            $em = $this->getDoctrine()->getManager();
-//            $em->persist($post);
-//            $em->flush();
-//
-//            return $this->redirectToRoute('posts_edit', array('id' => $post->getId()));
-//        }
-//
-//        return $this->render('posts/edit.html.twig', array(
-//            'post' => $post,
-//            'edit_form' => $editForm->createView(),
-//            'delete_form' => $deleteForm->createView(),
-//        ));
-//    }
-
-    /**
      * Deletes a Posts entity.
      *
      * @Route("/{id}", name="posts_delete")

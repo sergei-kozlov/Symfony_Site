@@ -1,13 +1,13 @@
 {% extends 'SiteBundle:layouts:master.http.twig' %}
 {% block content %}
-<div class="panel">
-    <h1>Подтверждение удаления</h1>
-</div>
+    <div class="panel">
+        <h1>Подтверждение удаления</h1>
+    </div>
 
     <div class="panel-heading">
 
-    <table>
-        <tbody>
+        <table>
+            <tbody>
             <tr>
                 <th>Id</th>
                 <td>{{ post.id }}</td>
@@ -27,15 +27,14 @@
                 <td>{{ post.subject }}</td>
             </tr>
 
+            </tbody>
+        </table>
+    </div>
 
-        </tbody>
-    </table>
-        </div>
 
-
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete" align="right" class="btn-primary">
-            {{ form_end(delete_form) }}
+    {{ form_start(delete_form) }}
+    <input type="submit" value="Delete" align="right" class="btn-primary">
+    {{ form_end(delete_form) }}
 
 {% endblock %}
 
