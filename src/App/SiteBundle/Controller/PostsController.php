@@ -50,7 +50,7 @@ class PostsController extends Controller
             $em->persist($post);
             $em->flush();
 
-            return $this->redirectToRoute('site_index', array('id' => $post->getId()));
+            return $this->redirectToRoute('posts_show', array('id' => $post->getId()));
         }
 
         return $this->render('@Site/pages/new.html.twig', array(
@@ -69,7 +69,7 @@ class PostsController extends Controller
     {
         $deleteForm = $this->createDeleteForm($post);
 
-        return $this->render('posts/show.html.twig', array(
+        return $this->render('@Site/pages/submit.html.twig', array(
             'post' => $post,
             'delete_form' => $deleteForm->createView(),
         ));
@@ -81,26 +81,26 @@ class PostsController extends Controller
      * @Route("/{id}/edit", name="posts_edit")
      * @Method({"GET", "POST"})
      */
-    public function editAction(Request $request, Posts $post)
-    {
-        $deleteForm = $this->createDeleteForm($post);
-        $editForm = $this->createForm('App\SiteBundle\Form\PostsType', $post);
-        $editForm->handleRequest($request);
-
-        if ($editForm->isSubmitted() && $editForm->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($post);
-            $em->flush();
-
-            return $this->redirectToRoute('posts_edit', array('id' => $post->getId()));
-        }
-
-        return $this->render('posts/edit.html.twig', array(
-            'post' => $post,
-            'edit_form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
-        ));
-    }
+//    public function editAction(Request $request, Posts $post)
+//    {
+//        $deleteForm = $this->createDeleteForm($post);
+//        $editForm = $this->createForm('App\SiteBundle\Form\PostsType', $post);
+//        $editForm->handleRequest($request);
+//
+//        if ($editForm->isSubmitted() && $editForm->isValid()) {
+//            $em = $this->getDoctrine()->getManager();
+//            $em->persist($post);
+//            $em->flush();
+//
+//            return $this->redirectToRoute('posts_edit', array('id' => $post->getId()));
+//        }
+//
+//        return $this->render('posts/edit.html.twig', array(
+//            'post' => $post,
+//            'edit_form' => $editForm->createView(),
+//            'delete_form' => $deleteForm->createView(),
+//        ));
+//    }
 
     /**
      * Deletes a Posts entity.
@@ -116,7 +116,6 @@ class PostsController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->remove($post);
-
             $em->flush();
         }
 
