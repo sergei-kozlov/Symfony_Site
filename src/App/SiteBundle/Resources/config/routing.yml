@@ -38,7 +38,7 @@ site_homepage:
     path:     /
     defaults: { _controller: SiteBundle:Default:index }
 
-site_index:
+site_blog:
     path:     /index
     defaults: { _controller: SiteBundle:Posts:index }
     requirements:

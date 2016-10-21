@@ -2,7 +2,6 @@
 
 {% block content %}
 
-
     {% for post in posts %}
 
         <div class="panel panel-default">
@@ -10,20 +9,15 @@
             <div class="panel-body"><b>{{ post.subject }}</b></div>
             <div class="panel-body" align="right">{{ post.created|date('l, F j, Y') }}</div>
 
-        </div>
+            <div class="panel-body" align="right">
+                <a href=" {{ path('posts_delete', { 'id': post.id })  }}" class="btn-danger">Delete</a>
+            </div>
 
+        </div>
 
     {% endfor %}
 
-    <ul>
-        <li>
-            <a href="{{ path('posts_new') }}">Create a new entry</a>
-        </li>
-    </ul>
-
-
-
-
+    <a href="{{ path('posts_new') }}" class="btn-primary">О фирме</a>
 
 {% endblock %}
 

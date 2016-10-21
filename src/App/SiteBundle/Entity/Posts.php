@@ -3,7 +3,9 @@
 namespace App\SiteBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints\DateTime;
+use Symfony\Component\Validator\Constraints\Email;
+use Symfony\Component\Validator\Constraints\Length;
+use Symfony\Component\Validator\Mapping\ClassMetadata;
 
 /**
  * Posts
@@ -18,6 +20,21 @@ class Posts
     {
         $this->setCreated(new \DateTime());
         $this->setUpdated(new \DateTime());
+    }
+
+    public static function loadValidatorMetadata(ClassMetadata $metadata)
+    {
+        $metadata->addPropertyConstraint('name', new Length(array(
+            'min' => 4,
+            'max' => 40,
+            'minMessage' => 'Имя должно содержать не менее 4 символов',
+            'maxMessage' => 'Имя должно содержать не более 40 символов'
+        )));
+        $metadata->addPropertyConstraint('email', new Email());
+        $metadata->addPropertyConstraint('subject', new Length(array(
+            'max' => 500,
+            'maxMessage' => 'Сообщение должно содержать не более 500 символов'
+        )));
     }
 
     /**
@@ -65,11 +82,10 @@ class Posts
     private $updated;
 
 
-
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -92,7 +108,7 @@ class Posts
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -115,7 +131,7 @@ class Posts
     /**
      * Get email
      *
-     * @return string 
+     * @return string
      */
     public function getEmail()
     {
@@ -138,7 +154,7 @@ class Posts
     /**
      * Get subject
      *
-     * @return string 
+     * @return string
      */
     public function getSubject()
     {
@@ -161,7 +177,7 @@ class Posts
     /**
      * Get created
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getCreated()
     {
@@ -184,7 +200,7 @@ class Posts
     /**
      * Get updated
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getUpdated()
     {

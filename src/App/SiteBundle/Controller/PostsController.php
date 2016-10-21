@@ -28,7 +28,7 @@ class PostsController extends Controller
 
         $posts = $em->getRepository('SiteBundle:Posts')->findAll();
 
-        return $this->render('@Site/pages/index.html.twig', array(
+        return $this->render('@Site/pages/blog.html.twig', array(
             'posts' => $posts,
         ));
     }
@@ -50,7 +50,7 @@ class PostsController extends Controller
             $em->persist($post);
             $em->flush();
 
-            return $this->redirectToRoute('posts_show', array('id' => $post->getId()));
+            return $this->redirectToRoute('site_index', array('id' => $post->getId()));
         }
 
         return $this->render('@Site/pages/new.html.twig', array(
@@ -116,6 +116,7 @@ class PostsController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->remove($post);
+
             $em->flush();
         }
 
