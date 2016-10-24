@@ -1,0 +1,28 @@
+
+{% extends 'SiteBundle:layouts:master.http.twig' %}
+
+{% block content %}
+
+    {% for flashMessage in app.session.flashbag.get('Nova-notice') %}
+        <div class="blogger-notice">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+
+
+    {{ form_start(form, { 'action': path('site_mail'), 'method': 'POST', 'attr': {'class': 'simplesite'} }) }}
+    {{ form_errors(form) }}
+
+    {{ form_row(form.name) }}
+    {{ form_row(form.email) }}
+    {{ form_row(form.subject) }}
+    {{ form_row(form.body) }}
+
+    {{ form_rest(form) }}
+
+    <div class="panel-body" align="right">
+        <input type="submit" value="Отправить" class="btn-primary"/>
+    </div>
+
+{% endblock %}
+

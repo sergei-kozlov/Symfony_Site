@@ -28,6 +28,12 @@ site_services:
     requirements:
     methods: GET
 
+site_mail:
+    path:     /mail
+    defaults: { _controller: SiteBundle:Mail:mail }
+    requirements:
+    methods: GET|POST
+
 
 
 

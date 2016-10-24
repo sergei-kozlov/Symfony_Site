@@ -1,0 +1,3 @@
+parameters:
+    # Blogger contact email address
+    app_site.emails.contact_email: svkozlow@gmail.com
