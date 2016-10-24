@@ -5,12 +5,23 @@ namespace App\SiteBundle\Tests\Controller;
 use PHPUnit\Framework\TestCase;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class PostsControllerTest extends WebTestCase
+class PageControllerTest extends WebTestCase
 {
 
+    public function aboutTest()
+    {
+
+        $client = static::createClient();
+
+        $crawler = $client->request('GET', '/about');
+
+        $this->assertEquals(1, $crawler->filter('h3:contains("Morbi lectus risus iaculisvel")')->count());
+    }
 
 
 
+
+    /*
     public function testCompleteScenario()
     {
         // Create a new client to browse the application
@@ -55,5 +66,5 @@ class PostsControllerTest extends WebTestCase
         $this->assertNotRegExp('/Foo/', $client->getResponse()->getContent());
     }
 
-
+    */
 }
