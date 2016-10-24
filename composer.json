@@ -24,7 +24,7 @@
 
         "doctrine/doctrine-fixtures-bundle": "dev-master",
         "doctrine/data-fixtures" : "dev-master",
-        "phpunit/phpunit": "6.0.x-dev"
+        "phpunit/phpunit": "5.6.1"
 
     },
     "require-dev": {
