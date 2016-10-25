@@ -10,8 +10,8 @@
     {% endfor %}
 
 
-    {{ form_start(form, { 'action': path('site_mail'), 'method': 'POST', 'attr': {'class': 'simplesite'} }) }}
-    {{ form_errors(form) }}
+    {{ form_start (form ,{ 'action': path('site_mail'), 'method': 'POST', 'attr': {'class': 'simplesite'} }) }}
+    {{ form_errors (form) }}
 
     {{ form_row(form.name) }}
     {{ form_row(form.email) }}
@@ -25,4 +25,7 @@
     </div>
 
 {% endblock %}
+
+
+
 

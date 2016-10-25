@@ -26,7 +26,7 @@ class MailController extends Controller
                     ->setSubject('Contact enquiry from Nova')
                     ->setFrom('enquiries@symblog.co.uk')
                     ->setTo($this->container->getParameter('app_site.emails.contact_email'))
-                    ->setBody($this->renderView('@Site/pages/mailform.http.twig', array('mail' => $mail)));
+                    ->setBody($this->renderView('@Site/pages/contactmail.html.twig', array('mail' => $mail)));
 
 
                 $this->get('mailer')->send($message);
@@ -40,7 +40,7 @@ class MailController extends Controller
             }
         }
 
-        return $this->render('@Site/pages/mailform.http.twig', array(
+        return $this->render('@Site/pages/contactmail.html.twig', array(
             'form' => $form->createView()
         ));
 
