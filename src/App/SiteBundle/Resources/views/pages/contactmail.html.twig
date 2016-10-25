@@ -2,7 +2,6 @@
 {% extends 'SiteBundle:layouts:master.http.twig' %}
 
 {% block content %}
-    {{ form_start((form)) }}
 
     {% for flashMessage in app.session.flashbag.get('Nova-notice') %}
         <div class="blogger-notice">
