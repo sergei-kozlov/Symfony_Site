@@ -9,9 +9,14 @@ security:
 
     firewalls:
         # disables authentication for assets and the profiler, adapt it according to your needs
+        default:
+            anonymous: ~
+            http_basic: ~
+
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
+
 
         main:
             anonymous: ~
