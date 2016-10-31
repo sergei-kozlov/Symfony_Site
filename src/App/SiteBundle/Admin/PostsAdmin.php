@@ -23,16 +23,20 @@ class PostsAdmin extends AbstractAdmin
      * @param \Sonata\AdminBundle\Form\FormMapper $formMapper
      * @return void
      */
-
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
             ->add('name', 'text')
             ->add('email', 'text')
-            ->add('subject', 'textarea')
-        ;
+            ->add('subject', 'textarea');
     }
 
+    /**
+     * Конфигурация списка записей
+     *
+     * @param \Sonata\AdminBundle\Datagrid\ListMapper $listMapper
+     * @return void
+     */
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
@@ -42,9 +46,8 @@ class PostsAdmin extends AbstractAdmin
             ->addIdentifier('subject', null, array('label' => 'Сообщение'))
             ->addIdentifier('created', null, array('label' => 'Дата создания'))
             ->addIdentifier('updated', null, array('label' => 'Дата обновления'));
-
-
     }
+
 
     /**
      * Конфигурация отображения записи
