@@ -34,7 +34,7 @@ framework:
     http_method_override: true
 
 #    Sonata
-    translator: { fallbacks: [ru] }
+    translator: { fallbacks: [en] }
 
 # Twig Configuration
 twig:

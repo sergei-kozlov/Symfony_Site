@@ -38,8 +38,6 @@ site_mail:
 
 
 
-
-
 site_homepage:
     path:     /
     defaults: { _controller: SiteBundle:Default:index }
@@ -73,4 +71,8 @@ site_delete:
     defaults: { _controller: SiteBundle:Posts:delete }
     requirements:
     methods: GET
+
+
+logout:
+    path: /logout
 

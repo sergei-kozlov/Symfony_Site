@@ -11,7 +11,7 @@ namespace SimpleSite\SiteBundle\DataFixtures\ORM;
 
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
-use SimpleSite\SiteBundle\Entity\Blog;
+use App\SiteBundle\Entity\Posts;
 
 class BlogFixtures implements FixtureInterface
 {
@@ -22,7 +22,7 @@ class BlogFixtures implements FixtureInterface
      */
     public function load(ObjectManager $manager)
     {
-        $blog1 = new Blog();
+        $blog1 = new Posts();
 
         $blog1->setName('Иван Иванович');
         $blog1->setEmail('nemo@mail.ua');
