@@ -1,6 +1,6 @@
 <?php
 
-namespace App\SiteBundle\Tests\Controller;
+namespace App\SiteBundle\Test\Controller;
 
 use PHPUnit\Framework\TestCase;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
@@ -18,10 +18,8 @@ class PageControllerTest extends WebTestCase
         $this->assertEquals(1, $crawler->filter('h3:contains("Morbi lectus risus iaculisvel")')->count());
     }
 
+/*
 
-
-
-    /*
     public function testCompleteScenario()
     {
         // Create a new client to browse the application
@@ -65,6 +63,5 @@ class PageControllerTest extends WebTestCase
         // Check the entity has been delete on the list
         $this->assertNotRegExp('/Foo/', $client->getResponse()->getContent());
     }
-
-    */
+*/
 }

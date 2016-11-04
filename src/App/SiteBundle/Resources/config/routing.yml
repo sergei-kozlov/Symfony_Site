@@ -4,12 +4,6 @@ site_default:
     requirements:
     methods: GET
 
-site_homeepage:
-    path:     /home
-    defaults: { _controller: SiteBundle:Page:home }
-    requirements:
-    methods: GET
-
 site_about:
     path:     /about
     defaults: { _controller: SiteBundle:Page:about }
@@ -34,13 +28,9 @@ site_mail:
     requirements:
     methods: GET|POST
 
-
-
-
-
 site_homepage:
-    path:     /
-    defaults: { _controller: SiteBundle:Default:index }
+    path:     /home
+    defaults: { _controller: SiteBundle:Page:home }
 
 site_blog:
     path:     /index
@@ -60,12 +50,6 @@ site_show:
     requirements:
     methods: GET
 
-site_edit:
-    path:     /edit
-    defaults: { _controller: SiteBundle:Posts:edit }
-    requirements:
-    methods: GET
-
 site_delete:
     path:     /delete
     defaults: { _controller: SiteBundle:Posts:delete }
@@ -73,6 +57,6 @@ site_delete:
     methods: GET
 
 
-logout:
-    path: /logout
+
+
 

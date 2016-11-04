@@ -2,22 +2,20 @@
 /**
  * Created by PhpStorm.
  * User: Sergey
- * Date: 31.10.2016
- * Time: 9:50
+ * Date: 03.11.2016
+ * Time: 11:28
  */
 
 namespace App\SiteBundle\Admin;
 
 
-use Knp\Menu\MenuItem;
 use Sonata\AdminBundle\Admin\AbstractAdmin;
-use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
 
 
-class PostsAdmin extends AbstractAdmin
+class UserAdmin extends AbstractAdmin
 {
     /**
      * Конфигурация формы редактирования записи
@@ -27,9 +25,9 @@ class PostsAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('name', 'text')
-            ->add('email', 'text')
-            ->add('subject', 'textarea');
+            ->add('username', 'text')
+            ->add('password', 'text')
+            ->add('salt', 'text');
     }
 
     /**
@@ -42,11 +40,9 @@ class PostsAdmin extends AbstractAdmin
     {
         $listMapper
             ->addIdentifier('id')
-            ->addIdentifier('name', null, array('label' => 'Имя'))
-            ->addIdentifier('email', null, array('label' => 'Email'))
-            ->addIdentifier('subject', null, array('label' => 'Сообщение'))
-            ->addIdentifier('created', null, array('label' => 'Дата создания'))
-            ->addIdentifier('updated', null, array('label' => 'Дата обновления'));
+            ->addIdentifier('name', null, array('label' => 'Name'))
+            ->addIdentifier('password', null, array('label' => 'Password'))
+            ->addIdentifier('salt', null, array('label' => 'Salt'));
     }
 
 
@@ -61,7 +57,8 @@ class PostsAdmin extends AbstractAdmin
         $showMapper
             ->add('id', null, array('label' => 'Идентификатор'))
             ->add('name', null, array('label' => 'Имя'))
-            ->add('email', null, array('label' => 'Электронная почта'))
-            ->add('subject', null, array('label' => 'Сообщение'));
+            ->add('password', null, array('label' => 'Пароль'))
+            ->add('salt', null, array('label' => 'Соль'));
     }
+
 }

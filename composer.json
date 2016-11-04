@@ -24,7 +24,9 @@
 
         "doctrine/doctrine-fixtures-bundle": "dev-master",
         "doctrine/data-fixtures" : "dev-master",
-        "phpunit/phpunit": "5.6.1"
+        "phpunit/phpunit": "5.6.1",
+
+        "sonata-project/doctrine-orm-admin-bundle": "dev-master"
 
     },
     "require-dev": {

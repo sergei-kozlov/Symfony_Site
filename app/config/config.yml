@@ -33,7 +33,7 @@ framework:
     fragments:       ~
     http_method_override: true
 
-#    Sonata
+# Sonata
     translator: { fallbacks: [en] }
 
 # Twig Configuration

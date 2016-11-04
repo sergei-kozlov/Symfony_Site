@@ -6,14 +6,14 @@
  * Time: 13:35
  */
 
-namespace SimpleSite\SiteBundle\DataFixtures\ORM;
+namespace App\SiteBundle\DataFixtures\ORM;
 
 
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use App\SiteBundle\Entity\Posts;
 
-class BlogFixtures implements FixtureInterface
+class PostsFixtures implements FixtureInterface
 {
     /**
      * Load data fixtures with the passed EntityManager
@@ -39,7 +39,8 @@ class BlogFixtures implements FixtureInterface
         $manager->persist($blog1);
 
 
-        $blog2 = new Blog();
+        $blog2 = new Posts();
+
         $blog2->setName('Пётр Петрович');
         $blog2->setEmail('ukr@mail.ua');
         $blog2->setSubject('Vestibulum vulputate mauris eget erat congue dapibus imperdiet justo scelerisque.
@@ -49,7 +50,8 @@ class BlogFixtures implements FixtureInterface
         $manager->persist($blog2);
 
 
-        $blog3 = new Blog();
+        $blog3 = new Posts();
+
         $blog3->setName('Юрий Юрьевич');
         $blog3->setEmail('mail@mail.ua');
         $blog3->setSubject('Lorem ipsumvehicula nunc non leo hendrerit commodo.
@@ -58,7 +60,8 @@ class BlogFixtures implements FixtureInterface
         $blog3->setUpdated($blog3->getCreated());
         $manager->persist($blog3);
 
-        $blog4 = new Blog();
+        $blog4 = new Posts();
+
         $blog4->setName('Павел Павлович');
         $blog4->setEmail('rus@mail.ua');
         $blog4->setSubject('Lorem commodo. Vestibulum vulputate mauris eget erat congue dapibus imperdiet
@@ -67,7 +70,8 @@ class BlogFixtures implements FixtureInterface
         $blog4->setUpdated($blog4->getCreated());
         $manager->persist($blog4);
 
-        $blog5 = new Blog();
+        $blog5 = new Posts();
+
         $blog5->setName('Николай Николаевич');
         $blog5->setEmail('nik@mail.ua');
         $blog5->setSubject('Lorem commodo. Vestibulum vulputate mauris eget erat congue dapibus imperdiet justo
@@ -75,7 +79,6 @@ class BlogFixtures implements FixtureInterface
         $blog5->setCreated(new \DateTime());
         $blog5->setUpdated($blog5->getCreated());
         $manager->persist($blog5);
-
 
         $manager->flush();
 

@@ -1,4 +1,3 @@
-
 {% extends 'SiteBundle:layouts:master.http.twig' %}
 
 {% block content %}
@@ -8,7 +7,6 @@
             {{ flashMessage }}
         </div>
     {% endfor %}
-
 
     {{ form_start (form ,{ 'action': path('site_mail'), 'method': 'POST', 'attr': {'class': 'simplesite'} }) }}
     {{ form_errors (form) }}

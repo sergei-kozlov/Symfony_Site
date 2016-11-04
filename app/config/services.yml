@@ -11,7 +11,9 @@ services:
         class: App\SiteBundle\Admin\PostsAdmin
         arguments: [~, App\SiteBundle\Entity\Posts, ~]
         tags:
-            - { name: sonata.admin, manager_type: orm, label: Posts }
+            - { name: sonata.admin, manager_type: orm, label: Комментарии }
+
+
 
 
 
