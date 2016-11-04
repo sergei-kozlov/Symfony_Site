@@ -44,6 +44,5 @@ class MailController extends Controller
             'form' => $form->createView()
         ));
 
-
     }
 }
