@@ -19,9 +19,6 @@ security:
  
     firewalls:
 
-
-
-
         main:
             http_basic: ~
             stateless: true
@@ -29,7 +26,6 @@ security:
             logout: true
             security: true
             anonymous: true
-
 
 
         dev:
